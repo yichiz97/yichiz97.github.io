@@ -75,7 +75,10 @@ a:hover, a:active {
   text-decoration: underline;
 }
 
-li:before{ content:'\00b7'; font-size:5px; }
+ul li {
+  font-size: 10pt;
+  margin: 8px;
+}
 
 body,
 td,
