@@ -91,12 +91,13 @@ strong {
 }
 
 heading {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'Lato Bold', Verdana, Helvetica, sans-serif;
+  color: #11549b;
   font-size: 25px;
 }
 
 papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'Lato Bold', Verdana, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700
 }
