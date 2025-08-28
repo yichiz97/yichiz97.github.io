@@ -23,8 +23,8 @@ a:active { color: var(--link-hover); }
 .brand { font-weight: 700; text-decoration: none; color: var(--text); font-size: 18px; }
 
 .nav { display: flex; gap: 14px; }
-.nav-link { text-decoration: none; color: var(--muted); padding: 8px 10px; border-radius: 8px; }
-.nav-link:visited { color: var(--muted); }            /* keep same after click */
+.nav-link { text-decoration: none; color: var(--nav-blue); padding: 8px 10px; border-radius: 8px; }
+.nav-link:visited { color: var(--nav-blue); }            /* keep same after click */
 .nav-link:hover { color: var(--text); text-decoration: underline; background: transparent; }
 .nav-link.active { color: var(--text); font-weight: 600; background: #f0fdfa; border: 1px solid #ccfbf1; }
 
@@ -47,11 +47,13 @@ h2 { font-size: 22px; margin: 28px 0 12px; }
 
 .pub-list { list-style: none; padding-left: 0; }
 .pub-title { font-weight: 600; }
-.pub-venue { color: var(--muted); margin-left: 8px; }
-.pub-links a { margin-left: 10px; }
+.pub-venue { color: var(--muted); margin-left: 0; margin-top: 4px; }
+.pub-links a { margin-left: 0; }
 
-/* Make venue abbreviations bold when wrapped with <span class="abbr">EC</span> */
-.pub-venue .abbr { font-weight: 700; letter-spacing: .02em; }
+$1
+
+/* Add a little vertical spacing between papers */
+.pub-list li + li { margin-top: 14px; }
 
 .site-footer { border-top: 1px solid var(--ring); margin-top: 48px; }
 .site-footer .container { height: 64px; display: flex; align-items: center; gap: 8px; color: var(--muted); }
