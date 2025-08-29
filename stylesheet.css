@@ -50,7 +50,16 @@ a:active { color: var(--link-hover); }
 .nav-link.active::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: 6px; height: 2px; background: var(--nav-blue); border-radius: 2px; }
 
 .hero { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 28px 0; align-items: center; }
-.avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid var(--ring); }
+.avatar {
+  border-radius: 0;         /* sharp corners */
+  width: 160px;             /* keep your current desktop size */
+  height: 160px;
+  object-fit: cover;        /* keeps it nicely cropped */
+  border: 1px solid var(--ring);
+}
+@media (max-width: 640px) {
+  .avatar { width: 120px; height: 120px; }
+}
 .subtitle { color: var(--muted); margin-top: 6px; }
 .btn { display: inline-block; padding: 8px 12px; border: 1px solid var(--ring); border-radius: 10px; text-decoration: none; color: var(--text); margin-right: 8px; }
 .btn.secondary { background: #f8fafc; }
