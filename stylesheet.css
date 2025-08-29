@@ -79,7 +79,7 @@ h2 { font-size: 22px; margin: 28px 0 12px; }
 .pub-list { list-style: none; padding-left: 0; }
 .pub-title { font-weight: 600; }
 .pub-venue { color: var(--muted); margin-left: 0; margin-top: 4px; }
-.pub-links a { margin-left: 10px; }
+.pub-links a { margin-left: 0px; }
 
 $1
 
