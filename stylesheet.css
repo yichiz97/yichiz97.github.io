@@ -68,27 +68,33 @@ a:active { color: var(--link-hover); }
 .hero {
   display: grid;
   grid-template-columns: 160px 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 18px;
-  padding: 28px 0;
-  align-items: start;
+  grid-template-rows: auto auto auto;   /* header | bio | cv */
+  column-gap: 18px;
+  row-gap: 8px;                         /* was 18px via 'gap'; this brings CV closer */
+  align-items: start;                    /* top-align items */
 }
+
+/* Photo: same size, pinned to row 2 so its top aligns with the bio */
 .hero .avatar {
   grid-column: 1;
   grid-row: 2;
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border: 1px solid var(--ring);
-  border-radius: 0; /* square, or set 8px if you prefer slight rounding */
+  align-self: start;
+  margin: 0;
 }
+
+/* Right side placement */
 .hero-header { grid-column: 2; grid-row: 1; }
 .hero-bio    { grid-column: 2; grid-row: 2; }
-.subtitle { color: var(--muted); margin: 2px 0; line-height: 1.35; }
+
+/* Remove the default top margin on the FIRST bio paragraph
+   (this is what made the first line sit below the photo top) */
+.hero-bio p:first-child { margin-top: 0; }
+
+/* CV under the photo, tight to the bottom edge */
 .hero-cv {
   grid-column: 1;
   grid-row: 3;
-  margin: 6px 0 0 0;     /* small space under the photo */
+  margin: 6px 0 0 0;          /* small gap under the photo */
 }
 .hero-cv .btn { margin-right: 0; }
 /* .btn { display: inline-block; padding: 6px 10px; border: 1px solid var(--ring); border-radius: 10px; text-decoration: none; color: var(--text); margin-right: 8px; }
