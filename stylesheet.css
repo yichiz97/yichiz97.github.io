@@ -8,16 +8,16 @@
   --ring: #e5e7eb;
 
   /* Generic link color (non-nav, non-title) */
-  --link: #154a94;
+  --link: #345c94;
   --link-hover: #0a2040;
 
   /* Nav + title blues */
-  --nav-blue: #154a94;
+  --nav-blue: #345c94;
   --nav-blue-hover: #0a2040;
 
   /* Header “box” */
-  --header-bg: #eff6ff;
-  --header-border: #bfdbfe;
+  --header-bg: #aecdf5;
+  --header-border: #89a4c4;
 }
 
 $1
