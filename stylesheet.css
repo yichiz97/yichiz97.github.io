@@ -135,11 +135,11 @@ main.container {
 }
 
 .teaching-bullets .course {
-  font-weight: 700;
+  color: var(--muted, --text);
 }
 
 .teaching-bullets .meta {
-  color: var(--muted, #6b7280);
+  color: var(--muted, --text);
 }
 
 .teaching-bullets time {
