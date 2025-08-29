@@ -134,14 +134,6 @@ h2 { font-size: 22px;
    Publications page
    ========================= */
 /* Centered white card */
-main.container {
-  background: #ffffff;
-  border: 1px solid var(--ring);
-  border-radius: 12px;
-  padding: 22px;
-  margin-top: 16px;
-  margin-bottom: 32px;
-}
 
 /* Titles: blue + darker on hover */
 .pub-title a, .pub-title a:visited { color: var(--nav-blue); text-decoration: none; }
