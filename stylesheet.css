@@ -89,7 +89,7 @@ a:active { color: var(--link-hover); }
 /* Remove the default top margin on the FIRST bio paragraph
    (this is what made the first line sit below the photo top) */
 .hero-bio p:first-child { margin-top: 0; }
-
+.subtitle { color: var(--muted); margin: 2px 0; line-height: 1.35; }
 /* CV under the photo, tight to the bottom edge */
 .hero-cv {
   grid-column: 1;
