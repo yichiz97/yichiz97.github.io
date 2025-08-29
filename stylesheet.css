@@ -76,7 +76,8 @@ h1 { font-size: 28px; margin: 12px 0; }
 /* keep global h2 simple; section rules come later */
 h2 { font-size: 22px; 
      margin: 28px 0 12px;   
-     border-bottom: 2px solid #bfdbfe;
+     padding-bottom: 5px;
+     border-bottom: 2px solid #0a2040;
      border-radius: 0;}
 
 .pill-list { display: flex; flex-wrap: wrap; gap: 8px; padding-left: 0; list-style: none; }
@@ -112,19 +113,6 @@ main.container {
 .pub-venue { color: var(--muted); margin-left: 0; margin-top: 4px; }
 .pub-venue .abbr { font-weight: 700; letter-spacing: .02em; }
 .pub-links a { margin-left: 10px; }
-
-/* Section titles on Publications: full-width underline bar */
-.page-publications h2 {
-  display: block;
-  background: transparent;
-  color: #111827;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 8px 22px;
-  margin: 24px -22px 12px;   /* stretches to card edges */
-  border-bottom: 2px solid #bfdbfe;
-  border-radius: 0;
-}
 
 /* =========================
    Footer
