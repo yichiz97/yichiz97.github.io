@@ -92,13 +92,15 @@ $1
 /* ===== Publications adjustments (full-width section row, spacing, title colors) ===== */
 .page-publications h2 {
   display: block;
-  background: #dbeafe;            /* slightly darker blue row */
-  border: 1px solid #bfdbfe;
-  color: #111827;                 /* near-black text */
-  font-size: 18px;                /* smaller than default h2 */
-  padding: 8px 22px;              /* align with main padding */
-  margin: 24px -22px 12px;        /* stretch full width of the white card */
-  border-radius: 0;               /* squared corners */
+  background: transparent;            /* remove previous blue fill */
+  color: #111827;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 22px;
+  margin: 24px -22px 12px;            /* stretch to card edges */
+  border: none;
+  border-bottom: 2px solid #bfdbfe;   /* comfortable blue underline */
+  border-radius: 0;
 }
 
 /* Paper titles: blue + darker on hover */
