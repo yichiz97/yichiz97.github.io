@@ -7,32 +7,41 @@
   --muted: #6b7280;
   --ring: #e5e7eb;
 
-  /* Generic link color (non-nav, non-title) */
+  /* Links */
   --link: #345c94;
   --link-hover: #0a2040;
 
-  /* Nav + title blues */
+  /* Accent blues for nav/titles */
   --nav-blue: #345c94;
   --nav-blue-hover: #0a2040;
 
   /* Header “box” */
-  --header-bg: #f8fbff;     /* soft neutral */
+  --header-bg: #f8fbff;
   --header-border: #e6eefc;
+
+  /* Unified content width */
+  --container-w: 820px;
 }
 
 /* =========================
    Base
    ========================= */
 * { box-sizing: border-box; }
+
 html, body {
   margin: 0; padding: 0;
   background: var(--bg); color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.6;
 }
-.container { max-width: 820px; margin: 0 auto; padding: 0 18px; }
 
-/* Generic links: same color after visit; underline/darker on hover */
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* Links: same color after visit; darker + underline on hover */
 a, a:link, a:visited { color: var(--link); text-decoration: none; transition: color .15s ease, text-decoration-color .15s ease; }
 a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 2px; }
 a:active { color: var(--link-hover); }
@@ -63,42 +72,136 @@ a:active { color: var(--link-hover); }
 .nav-link:focus-visible { outline: 2px solid #bfdbfe; outline-offset: 2px; }
 
 /* =========================
-   Hero (home)
+   Home: hero layout
    ========================= */
+/* 2 columns: photo | text ; 3 rows: header | bio | CV */
 .hero {
   display: grid;
   grid-template-columns: 160px 1fr;
-  grid-template-rows: auto auto auto;   /* header | bio | cv */
+  grid-template-rows: auto auto auto;
   column-gap: 18px;
-  row-gap: 8px;                         /* was 18px via 'gap'; this brings CV closer */
-  align-items: start;                    /* top-align items */
+  row-gap: 8px;
+  padding: 28px 0;
+  align-items: start;
 }
 
-/* Photo: same size, pinned to row 2 so its top aligns with the bio */
+/* Photo: fixed square, aligned with top of bio (row 2) */
 .hero .avatar {
   grid-column: 1;
   grid-row: 2;
-  align-self: start;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid var(--ring);
+  border-radius: 0;  /* square; change to 8px if you want slight rounding */
+  display: block;
   margin: 0;
 }
 
-/* Right side placement */
+/* Right column placement */
 .hero-header { grid-column: 2; grid-row: 1; }
 .hero-bio    { grid-column: 2; grid-row: 2; }
 
-/* Remove the default top margin on the FIRST bio paragraph
-   (this is what made the first line sit below the photo top) */
-.hero-bio p:first-child { margin-top: 0; }
+/* Tighten subtitle and first bio line */
 .subtitle { color: var(--muted); margin: 2px 0; line-height: 1.35; }
-/* CV under the photo, tight to the bottom edge */
+.hero-bio p:first-child { margin-top: 0; }
+
+/* CV under the photo, left-aligned with photo edge */
 .hero-cv {
   grid-column: 1;
   grid-row: 3;
-  margin: 6px 0 0 0;          /* small gap under the photo */
+  margin: 6px 0 0 0;
 }
-.hero-cv .btn { margin-right: 0; }
-/* .btn { display: inline-block; padding: 6px 10px; border: 1px solid var(--ring); border-radius: 10px; text-decoration: none; color: var(--text); margin-right: 8px; }
-.btn.secondary { background: #f8fafc; } */
+
+.btn {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid var(--ring);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+  margin-right: 8px;
+}
+.btn.secondary { background: #f8fafc; }
+
+/* Headings */
+h1, h2 { line-height: 1.25; }
+h1 { font-size: 28px; margin: 12px 0; }
+h2 { font-size: 22px; margin: 28px 0 12px; }
+
+/* Pills + news */
+.pill-list { display: flex; flex-wrap: wrap; gap: 8px; padding-left: 0; list-style: none; }
+.pill-list li { padding: 6px 10px; border: 1px solid var(--ring); border-radius: 999px; font-size: 14px; }
+.news { list-style: none; padding-left: 0; }
+.news li { margin: 6px 0; }
+.news .date { font-weight: 600; margin-right: 8px; color: var(--muted); }
+
+/* =========================
+   Main content “card” (all pages)
+   ========================= */
+main.container {
+  background: #ffffff;
+  border: 1px solid var(--ring);
+  border-radius: 12px;
+  padding: 22px;
+  margin: 16px auto 32px;
+}
+
+/* =========================
+   Publications page
+   ========================= */
+/* Section titles: aligned underline inside the card */
+.page-publications h2 {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 24px 0 12px;
+  padding-bottom: 10px;                /* distance between text and underline */
+  border-bottom: 2px solid var(--nav-blue-hover);
+}
+
+/* Paper title links */
+.pub-title a, .pub-title a:visited { color: var(--nav-blue); text-decoration: none; }
+.pub-title a:hover { color: var(--nav-blue-hover); text-decoration: underline; }
+
+/* Lists + spacing */
+.pub-list { list-style: none; padding-left: 0; margin: 0; }
+.pub-list li { padding: 6px 0; }
+.pub-list li + li { margin-top: 20px; }
+
+.pub-venue { color: var(--muted); margin-left: 0; margin-top: 4px; }
+.pub-venue .abbr { font-weight: 700; letter-spacing: .02em; }
+.pub-links a { margin-left: 10px; }
+
+/* =========================
+   CV / Teaching styles (optional but handy)
+   ========================= */
+.cv-title {
+  margin: 6px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  font-weight: 800;
+  border-bottom: 2px solid #111827;
+  padding-bottom: 6px;
+}
+.cv-entry { margin-top: 20px; }
+.cv-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.cv-role { margin: 0; font-size: 20px; font-weight: 700; }
+.cv-term { white-space: nowrap; font-weight: 600; color: #374151; }
+.cv-meta { list-style: none; padding: 0; margin: 6px 0 0; }
+.cv-meta li { margin: 2px 0; }
+.cv-meta em { font-style: italic; font-weight: 600; margin-right: 6px; }
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer { border-top: 1px solid var(--ring); margin-top: 48px; }
+.site-footer .container { height: 64px; display: flex; align-items: center; gap: 8px; color: var(--muted); }
+
+/* =========================
+   Responsive
+   ========================= */
 @media (max-width: 640px) {
   .hero {
     grid-template-columns: 1fr;
@@ -112,54 +215,5 @@ a:active { color: var(--link-hover); }
     grid-row: auto;
   }
   .hero .avatar { width: 120px; height: 120px; }
-}
-
-h1, h2 { line-height: 1.25; }
-h1 { font-size: 28px; margin: 12px 0; }
-/* keep global h2 simple; section rules come later */
-h2 { font-size: 22px; 
-     margin: 28px 0 12px;   
-     padding-bottom: 5px;
-     border-bottom: 2px solid #0a2040;
-     border-radius: 0;}
-
-.pill-list { display: flex; flex-wrap: wrap; gap: 8px; padding-left: 0; list-style: none; }
-.pill-list li { padding: 6px 10px; border: 1px solid var(--ring); border-radius: 999px; font-size: 14px; }
-
-.news { list-style: none; padding-left: 0; }
-.news li { margin: 6px 0; }
-.news .date { font-weight: 600; margin-right: 8px; color: var(--muted); }
-
-/* =========================
-   Publications page
-   ========================= */
-/* Centered white card */
-
-/* Titles: blue + darker on hover */
-.pub-title a, .pub-title a:visited { color: var(--nav-blue); text-decoration: none; }
-.pub-title a:hover { color: var(--nav-blue-hover); text-decoration: underline; }
-
-/* Lists + spacing between items */
-.pub-list { list-style: none; padding-left: 0; margin: 0; }
-.pub-list li { padding: 6px 0; }
-.pub-list li + li { margin-top: 10px; }
-
-/* Venue line */
-.pub-venue { color: var(--muted); margin-left: 0; margin-top: 4px; }
-.pub-venue .abbr { font-weight: 700; letter-spacing: .02em; }
-.pub-links a { margin-left: 10px; }
-
-/* =========================
-   Footer
-   ========================= */
-.site-footer { border-top: 1px solid var(--ring); margin-top: 48px; }
-.site-footer .container { height: 64px; display: flex; align-items: center; gap: 8px; color: var(--muted); }
-
-/* =========================
-   Responsive
-   ========================= */
-@media (max-width: 640px) {
-  .hero { grid-template-columns: 1fr; }
-  .avatar { width: 120px; height: 120px; }
   main.container { border: none; border-radius: 0; padding: 16px; margin: 0; }
 }
