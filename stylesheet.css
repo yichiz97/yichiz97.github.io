@@ -66,7 +66,7 @@ a:active { color: var(--link-hover); }
    Hero (home)
    ========================= */
 .hero { display: grid; grid-template-columns: 160px 1fr; gap: 18px; padding: 28px 0; align-items: center; }
-.avatar { width: 160px; height: 160px; margin-top: 6px; border-radius: 0; object-fit: cover; border: 1px solid var(--ring); }
+.avatar { width: 160px; height: 160px; margin-top: 20px; border-radius: 0; object-fit: cover; border: 1px solid var(--ring); }
 .subtitle { color: var(--muted); margin: 2px 0; line-height: 1.35; }
 .btn { display: inline-block; padding: 6px 10px; border: 1px solid var(--ring); border-radius: 10px; text-decoration: none; color: var(--text); margin-right: 8px; }
 .btn.secondary { background: #f8fafc; }
