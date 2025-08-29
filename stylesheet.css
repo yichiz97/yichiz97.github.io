@@ -115,6 +115,76 @@ main.container {
 .pub-venue .abbr { font-weight: 700; letter-spacing: .02em; }
 .pub-links a { margin-left: 0px; }
 
+
+/* =========================
+   Teaching page
+   ========================= */
+.teaching-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;                  /* spacing between courses */
+  margin-top: 12px;
+}
+
+@media (min-width: 780px) {
+  .teaching-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));  /* 2-up on desktop */
+  }
+}
+
+.course {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--ring, #e5e7eb);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.course-title {
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 1.05rem;         /* slightly larger than body */
+  line-height: 1.3;
+}
+
+.course-meta {
+  margin: 0;
+  color: var(--muted, #6b7280);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.course-meta .institution {
+  color: var(--text, #1a1a1a);
+  font-weight: 600;
+}
+
+.course-meta .role,
+.course-meta .instructor {
+  white-space: nowrap;        /* keeps short bits on one line */
+}
+
+.course time {
+  font-variant-numeric: tabular-nums; /* aligns terms like 'Winter 2022' */
+}
+
+.course-desc {
+  margin: 8px 0 0;
+}
+
+/* Accessible focus state if a link lives inside the card */
+.course:focus-within {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px var(--ring, #e5e7eb) inset;
+  border-color: transparent;
+  border-radius: 14px;
+}
+
+/* Print: remove chrome, keep content tight */
+@media print {
+  .course { border: 0; padding: 0; background: none; }
+  .teaching-list { display: block; }
+}
+
 /* =========================
    Footer
    ========================= */
