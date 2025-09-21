@@ -112,7 +112,7 @@ main.container {
 
 /* Venue line */
 .pub-venue { color: var(--muted); margin-left: 0; margin-top: 4px; }
-.pub-venue .abbr { font-weight: 700; letter-spacing: .02em; }
+.pub-venue .abbr { font-weight: 700; letter-spacing: .02em; color: black}
 .pub-links a { margin-left: 0px; }
 
 
